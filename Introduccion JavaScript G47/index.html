@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- cambiando el contenido de una etiqueta -->
+    <h1>¡Hola Mundo, Esto es JavaScript!</h1>
+    <p id="demo">JavaScript puede cambiar el contenido de una etiqueta HTML</p>
+
+    <!-- codigo JavaScript dentro de un boton-->
+    <button
+      type="button"
+      onclick="document.getElementById('demo').innerHTML = 'Contenido cambiado'"
+    >
+      Cambiar contenido
+    </button>
+
+    <!-- fin del contenido cambiado -->
+    <hr />
+
+    <!-- inicio de codigo para cambiar un atributo -->
+    <h1>Cambiando un atributo de etiquetas</h1>
+    <button type="button" onclick="document.getElementById('demo1').src = 'img/on.gif'">Encender</button>
+    <img src="off.gif" alt="off.gif" id="demo1">
+    <button type="button" onclick="document.getElementById('demo1').src = 'img/off.gif' ">Apagar</button>
+
+    <script>
+      let texto = "Let's do it";
+    </script>
+  </body>
+</html>
