@@ -25,13 +25,18 @@
     <!-- inicio de codigo para cambiar un atributo -->
     <h1>Cambiando un atributo de etiquetas</h1>
     <button type="button" onclick="document.getElementById('imagen').src = 'img/on.gif'">Encender</button>
-    <img src="off.gif" alt="off.gif" id="imagen">
+    <img src="img/off.gif" alt="off.gif" id="imagen">
     <button type="button" onclick="document.getElementById('imagen').src = 'img/off.gif' ">Apagar</button>
     <!-- fin del codigo para cambiar atributo -->
 
     <hr>
 
-    
+    <!-- cambiando estilos css -->
+    <h1 style="text-align: center;">Cambiando un estilo CSS</h1>
+    <p id="estilo">Estilo CSS que vamos a cambiar</p>
+    <button onclick="document.getElementById('estilo').style.fontSize = '35px'">Cambiar Estilo</button>
+
+
     <script>
       let texto = "Let's do it";
     </script>
