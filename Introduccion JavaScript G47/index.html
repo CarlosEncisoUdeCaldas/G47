@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    
   </head>
   <body>
     <!-- cambiando el contenido de una etiqueta -->
@@ -12,10 +13,7 @@
     <p id="demo">JavaScript puede cambiar el contenido de una etiqueta HTML</p>
 
     <!-- codigo JavaScript dentro de un boton-->
-    <button
-      type="button"
-      onclick="document.getElementById('demo').innerHTML = 'Contenido cambiado'"
-    >
+    <button type="button" onclick=" cambiarContenido() ">
       Cambiar contenido
     </button>
 
@@ -24,35 +22,57 @@
 
     <!-- inicio de codigo para cambiar un atributo -->
     <h1>Cambiando un atributo de etiquetas</h1>
-    <button type="button" onclick="document.getElementById('imagen').src = 'img/on.gif'">Encender</button>
-    <img src="img/off.gif" alt="off.gif" id="imagen">
-    <button type="button" onclick="document.getElementById('imagen').src = 'img/off.gif' ">Apagar</button>
+    <button type="button" onclick=" OnOff('img/on.gif') ">Encender</button>
+    <img src="img/off.gif" alt="off.gif" id="imagen" />
+    <button type="button" onclick=" OnOff('img/off.gif') ">Apagar</button>
     <!-- fin del codigo para cambiar atributo -->
 
-    <hr>
+    <hr />
 
     <!-- cambiando estilos css -->
-    <h1 style="text-align: center;">Cambiando un estilo CSS</h1>
+    <h1 style="text-align: center">Cambiando un estilo CSS</h1>
     <p id="estilo">Estilo CSS que vamos a cambiar</p>
-    <button onclick="document.getElementById('estilo').style.fontSize = '35px'">Cambiar Estilo</button>
+    <button onclick=" cambiarEstilo('35px') ">Cambiar Estilo</button>
+    <button onclick=" cambiarEstilo('') ">Volver Estilo</button>
     <!-- fin cambiando estilos css -->
 
-    <hr>
+    <hr />
 
     <!-- cambiando el estilo para mostrar u ocultar -->
     <h1>Mostrar u ocultar un elemento con JavaScript</h1>
     <div id="mostrar">
-      <p id="">Este parrafo será mostrado u ocultado por el boton de abajo</p>
-      <img src="chicago.jpeg" alt="chicago.jpeg" id="" width="300">
+      <p>Este parrafo será mostrado u ocultado por el boton de abajo</p>
+      <img src="chicago.jpeg" alt="chicago.jpeg" id="" width="300" />
     </div>
-    <button type="button" onclick = " document.getElementById('mostrar').style.display = 'none' " > Ocultar </button>
-    <button type="button" onclick = " document.getElementById('mostrar').style.display = 'block' " > Mostrar </button>
-    
-    
+    <button type="button" onclick=" mostrar('none') ">Ocultar</button>
+    <button type="button" onclick=" mostrar('block') ">Mostrar</button>
     <!-- fin cambiando el estilo para mostrar u ocultar -->
 
+    <hr />
+    <br />
+    <!-- insertar texto por fuera de la linea -->
+
+    <p id="outline" style="font-size: 35px"></p>
+
+    <!-- fin insertar texto por fuera de la linea -->
+
+    <hr>
+    <button onclick="document.write('hola mundo')">Document Write</button>
+    <button onclick="alert('Esto es una alerta')">Window Alert</button>
+    <button onclick="console.log('Bienvenidos a la consola G47')">Console log</button>
+    <button onclick="console.warn('Ojito!!!!! G47')">Log Warn</button>
+    <button onclick="window.print()">Imprimir Doc</button>
+
     <script>
-      let texto = "Let's do it";
+      // let texto = "Let's do it";
+      
+      // function ocultar() {
+      //   document.getElementById('mostrar').style.display = 'none';
+      // }
+      // fin funcion para mostrar y ocultar un elemento
     </script>
+
+    <!-- insertando un script externo -->
+    <script src="js/script.js"></script>
   </body>
 </html>
