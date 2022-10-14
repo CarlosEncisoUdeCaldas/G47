@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+    
+    <script>
+    // No se puede reasignar el valor de un objeto
+    const obj = { id: 1, nombre: "Pepito", apellido: "Perez"  };
+    // obj = { direccion: "12345", telefono:"654321"}
+    console.log(obj);
+
+    obj.apellido = "Gil";
+    console.log(obj);
+    obj.edad = 25;
+    
+    console.log(obj);
+    // console.log(obj.apellido);
+    
+    // No se puede reasignar el valor de un array
+    const arr = [];
+    // arr = [4,5];
+    arr.push(100)
+    console.log(arr);
+    arr[2] = "hola";
+    console.log(arr);
+
+    //No se puede redeclarar una variable const
+    // const saludo = 'hola';
+    // const saludo = 'jelou';
+
+    // No se puede reasignar un valor a una const
+    // const valor = 5;
+    // valor "10;"
+    
+
+    //las variables let se pueden inicializar vacias y despues asignar valores
+    //  let hola;
+    //  hola = "jelou!"
+    //  console.log(hola);
+
+    //las variables const no se pueden inicializar vacias
+    // const PI; esto es un error, no se puede
+    // const PI = 3.1416;
+    // console.log(PI);
+
+
+     //explicacion de los ambitos de bloque o scope
+      // let nombre = "Enciso";
+      
+      // for(let i =0; i<5 ; i++){
+      //   setTimeout( () => {
+      //     let nombre = "Charles";
+      //     console.log(`Su nombre es ${nombre} y esta es la iteracion ${i+1}`);
+      //     // console.log("Su nombre es " + nombre + " y este es la iteracion " + i);
+      //   }, 5000)         
+      // }
+
+      
+      // console.log(nombre);
+
+      // function saludo() {
+      //   let hello = "hola";
+      //   console.log(hello);
+      // }
+
+      // saludo();
+     
+      //no se puede volver a redeclarar una variable tipo let
+      // let texto = "cambio de palabra";  
+      // let texto = 0;
+
+      // const arreglo = [1,2,3,4] ;
+      // console.log(arreglo[0]);
+      // console.log(arreglo);
+
+      //despues de cambiar el valor de la posicion 0
+      // arreglo[0] = 100;
+
+      // console.log(arreglo[0]);
+      // console.log(arreglo);
+
+      // const lastName = "Enciso";
+      
+
+
+      // let palabra = "texto equis";
+      // console.log(palabra);
+
+      // palabra = "nuevo valor";
+      // console.log(palabra);
+
+      // function ocultar() {
+      //   document.getElementById('mostrar').style.display = 'none';
+      // }
+      // fin funcion para mostrar y ocultar un elemento
+    </script>
+
+    <!-- insertando un script externo -->
+    <!-- <script src="js/script.js"></script> -->
+  </body>
+</html>
