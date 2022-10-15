@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Insertando un Array dentro de un etiqueta p</h1>
+    <button onclick="insertOneArray()">Insertar un Arreglo</button>
+    <p id="insertArray"></p2>
+
+    <ul>
+      <li>10</li>
+      <li>20</li>
+      <li>30</li>
+      <li>40</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+
+
+    <script>
+      //funcion que permite insertar un arreglo dentro de una etiqueta HTML
+      function insertOneArray(){
+        const carsBrands = [ 'Audi' , 'BMW', 'Ford' ] ;
+        // document.getElementById('insertArray').innerHTML = `Marcas de autos dentro del Array: ${carsBrands[0]}, ${carsBrands[1]}, ${carsBrands[2]} `;
+        document.getElementById('insertArray').innerHTML = carsBrands;
+        console.log(carsBrands);
+      }
+
+      //insertando un arreglo dentro de otro
+      const arregloDePrueba01 = [10,20,30,40];
+      // const arregloDePrueba02 = [arregloDePrueba01, 5, 6]; //de esta manera no se copian los elementos exactos del array 01
+      const arregloDePrueba02 = [...arregloDePrueba01, 5, 6]; //pero si uso el operador spread si se copian los elementos del array 01
+
+      // console.log(arregloDePrueba02);
+      // console.log(arregloDePrueba02.length);
+
+      //usamos el recorrido por el ciclo para insertar item por item del arregloDePrueba02
+      let text = '<ul>'
+      for(let i = 0; i < arregloDePrueba02.length ; i++){
+          // console.log( "Posicion No " + i + ": " + arregloDePrueba02[i] ); //version tradicional
+          console.log( `Posicion No ${i}: ${arregloDePrueba02[i]}` ); //version con back stick o template string
+          text += '<li>'+ arregloDePrueba02[i] +'</li>';
+      }
+      text = text + '</ul>';
+      // text += '</ul>'; //esto es lo mismo que la linea anterior
+      console.log(text);
+      document.getElementById('insertArray').innerHTML = text;
+
+    </script>
+
+    <!-- insertando un script externo -->
+    <!-- <script src="js/script.js"></script> -->
+  </body>
+</html>

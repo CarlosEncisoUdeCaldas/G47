@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //un arreglo y un objeto se pueden crear vacios y despues irlos llenando en la medida que avanza
+      // const usersNames = [];
+      // console.log(usersNames);
+      // usersNames[0] = 'Mazinger';
+      // console.log(usersNames);
+      // usersNames[3] = 'Goku';
+      // console.log(usersNames);
+      //No es recomendable ir llenando un arreglo vacio de forma manual por medio de sus indices
+
+      //los arreglos y objetos o en general las variables que almacena lista se declaran en plural
+      const carsBrands = [
+        'Audi',
+        'BMW',
+        'Ford'
+      ];
+
+      // const carsBrands01 = carsBrands; //sin operador spread 
+      const carsBrands01 = [...carsBrands]; //usando el operador spread ... si es una arreglo va dentro de corchetes
+      console.log(carsBrands);
+      console.log(carsBrands01);
+
+      //cambiamos un elemento del arreglo carsBrands01 y noten que tambien cambia el mismo elemento en el 
+      // arreglo carsBrands cuando no usamos el operador spread ...
+      carsBrands01[0] = 'Jaguar';
+      console.log(carsBrands01);
+      console.log(carsBrands);
+
+
+    </script>
+
+    <!-- insertando un script externo -->
+    <!-- <script src="js/script.js"></script> -->
+  </body>
+</html>

@@ -1,136 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      //convirtiendo objetos a formato Json
-      const variableTipoJson = [
-        { 
-          firstName: "Charles",
-          lastName: "Xavier", 
-          tel: 123456 
-        },
-        { 
-          firstName: "Pedro", 
-          lastName: "Picapiedra", 
-          tel: 123456 
-        },
-        { 
-          firstName: "Tom", 
-          lastName: "Sawyer", 
-          tel: 123456 
-        },
-      ];
 
-      console.log(variableTipoJson);
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      const personTipoCadena = JSON.stringify(variableTipoJson);
-      console.log(personTipoCadena);
+<body>
+  <h1>Insertando un Array dentro de un etiqueta p</h1>
+  <button onclick="insertOneArray()">Insertar un Arreglo</button>
+  <p id="insertArray">
+    </p2>
 
-      const personTipoFormatoJson = JSON.parse(personTipoCadena);
-      console.log(personTipoFormatoJson)
+  <ul>
+    <li>10</li>
+    <li>20</li>
+    <li>30</li>
+    <li>40</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
 
-      //usando el operador spread ... para copiar objetos
-      // const person = {
-      //   firstName : 'Charles',
-      //   lastName  : 'Xavier',
-      //   tel       : 123456,
-      // }
-      // console.log(person);
 
-      // //esto no se debe hacer
-      // // const person1 = person;  //creamos un objeto con la misma referencia en memoria de person
-      // const person1 = {...person};  //creamos una copia exacta del objeto person con el operador spread
-      // console.log('Valores originales de los dos objetos');
-      // console.log(person);
-      // console.log(person1);
-      // // console.log(person1);
+  <script>
+    //funcion que permite insertar un arreglo dentro de una etiqueta HTML
+    function insertOneArray() {
+      const carsBrands = ['Audi', 'BMW', 'Ford'];
+      // document.getElementById('insertArray').innerHTML = `Marcas de autos dentro del Array: ${carsBrands[0]}, ${carsBrands[1]}, ${carsBrands[2]} `;
+      document.getElementById('insertArray').innerHTML = carsBrands;
+      console.log(carsBrands);
+    }
 
-      // console.log('valores modificados en ambos objetos');
-      // person.firstName = 'Picapiedra'
-      // person1.firstName = 'Tommy';
-      // person1.lastName = 'Hilfiger';
-      // console.log(person);
-      // console.log(person1);
+    //insertando un arreglo dentro de otro
+    const arregloDePrueba01 = [10, 20, 30, 40];
+    // const arregloDePrueba02 = [arregloDePrueba01, 5, 6]; //de esta manera no se copian los elementos exactos del array 01
+    const arregloDePrueba02 = [...arregloDePrueba01, 5, 6]; //pero si uso el operador spread si se copian los elementos del array 01
 
-      // creacion de objetos con sintaxis multilinea
-      // const person = {
-      //   firstName : 'Charles',
-      //   lastName  : 'Xavier',
-      //   tel       : 123,
-      //   address   : {
-      //     lat: 5.42636,
-      //     long: 123.654
-      //   },
-      //   fullName  : function() {
-      //     return (`Su nombre completo es: ${this.firstName} ${this.lastName}`);
-      //   },
-      //   arreglo: [1,2,3]
-      // }
+    // console.log(arregloDePrueba02);
+    // console.log(arregloDePrueba02.length);
 
-      // //insertando valor dentro del objeto person propiedad arreglo
-      // console.log(person);
-      // person.arreglo.push(47);
-      // console.log(person.arreglo);
-      // console.log(person);
+    //usamos el recorrido por el ciclo para insertar item por item del arregloDePrueba02
+    let text = '<ul>'
+    for (let i = 0; i < arregloDePrueba02.length; i++) {
+      // console.log( "Posicion No " + i + ": " + arregloDePrueba02[i] ); //version tradicional
+      console.log(`Posicion No ${i}: ${arregloDePrueba02[i]}`); //version con back stick o template string
+      text += '<li>' + arregloDePrueba02[i] + '</li>';
+    }
+    text = text + '</ul>';
+    // text += '</ul>'; //esto es lo mismo que la linea anterior
+    console.log(text);
+    document.getElementById('insertArray').innerHTML = text;
 
-      // console.log(person.fullName());
-      // console.log(person.address);
-      // console.log(person.address['lat']);
-      // console.log(person.address.long);
+  </script>
 
-      // //lo que no se puede hacer con un objeto
-      // const obj1 = {
-      //   firstName: 'Pepito',
-      // };
-      // // obj1 = {lastName: 'Lopez'}; //no se puede reasignar las clave:valor de un objeto
-      // console.log(obj1);
+  <!-- insertando un script externo -->
+  <!-- <script src="js/script.js"></script> -->
+</body>
 
-      // obj1.firstName = 'Osito'; //esto si es permitido
-      // console.log(obj1);
-
-      // obj1.lastName = 'Lopez';  //esto si es permitido
-      // obj1['lastName'] = 'Lopez';  //esto es lo mismo que la linea anterior
-      // console.log(obj1);
-      // console.log(obj1.lastName);
-
-      // //Concatenacion tradicional o normal
-      // console.log('Su nombre completo es: ' + obj1.firstName + ' ' + obj1.lastName );
-
-      // //template string se obtiene el mismo resultado mas limpio
-      // console.log(`Su nombre completo es: ${obj1.firstName} ${obj1.lastName}`);
-
-      // console.log(`La suma de los dos numeros es ${5+4}`);
-
-      // lo que no se puede hacer con const tipo objetos o arrays
-      // const arreglo1 = [1,2,3];
-      // arreglo1.push(200);
-      // console.log(arreglo1);
-      // // arreglo1 = [4,5,6]; //esto no se puede hacer, arroja un error
-      // arreglo1[0] = 100;  //esto si es permitido
-      // arreglo1[1] = 200;  //esto si es permitido
-      // arreglo1[2] = 300;  //esto si es permitido
-
-      // console.log(arreglo1);
-
-      //esto es lo correcto
-      // const number = 0 ;
-      // const texto = '';
-
-      // esto no se puede
-      // const number;
-
-      //const no se puede reasignar un valor a una variable const
-      // const saludo = 'hola';
-      // saludo = 'adios';
-    </script>
-
-    <!-- insertando un script externo -->
-    <!-- <script src="js/script.js"></script> -->
-  </body>
 </html>
