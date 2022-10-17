@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <div id="demo">
+
+    </div>
+
+    <script>
+      //funcion map para recorrido de un arreglo
+      const arreglo01 = [1, 5, 10, 15];
+      const arreglo02 = arreglo01.map((item) => item * 10);
+      console.log(arreglo01);
+      // console.log(arreglo02);
+
+      //intenten hacer un nuevo arreglo con la funcion map donde se duplique el valor del arreglo 1
+      let texto = '';
+      const doubles = arreglo01.map( (number) => { 
+        texto += `<p> ${number * 2} </p>`;
+        return number * 2 ;
+      } )
+
+      document.getElementById('demo').innerHTML = texto;
+      console.log(doubles);
+      console.log(texto);
+
+      // funcion foreach no genera un nuevo array, solo lo recorre
+      doubles.forEach( function(x) {
+        console.log(x);
+      })
+
+      
+    </script>
+
+    <!-- insertando un script externo -->
+    <!-- <script src="js/script.js"></script> -->
+  </body>
+</html>

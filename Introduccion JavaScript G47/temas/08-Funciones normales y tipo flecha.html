@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="demo"></div>
+
+    <script>
+      //funcion anonima, siempre deben ser usadas para asignarse a una variable o usarlas como funcion callbacks
+      // const saludo01 = function() {
+      //   return console.log("hola mundo");
+      // }
+
+      //convertiendo la funcion anterior en tipo flecha. Cuando regresa una sola linea, podemos simplicar la funcion
+      const saludo01 = (nombre) => console.log( "hola mundo funcion flecha y su nombre es" , nombre);
+      saludo01('Nelson');
+      saludo01('Carlos');
+      saludo01('Sebastian');
+      saludo01('Gladys');
+      saludo01('Angie');
+      saludo01('Johanita');
+
+      //funcion sencilla con nombre
+      // function saludo() {
+      //   console.log("hola mundo");
+      // }
+
+      // saludo();
+    </script>
+
+    <!-- insertando un script externo -->
+    <!-- <script src="js/script.js"></script> -->
+  </body>
+</html>
