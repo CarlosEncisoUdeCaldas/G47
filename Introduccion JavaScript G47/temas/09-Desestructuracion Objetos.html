@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="demo"></div>
+
+    <script>
+      //Desestructuracion de objetos - Object's Desestructiring
+      const person = {
+        firstName: 'Osito',
+        lastName: 'Dormilon',
+        telefono: 123456789
+      }
+      // console.log(person);
+      // console.log(person.firstName);
+      // console.log(person.lastName);
+      // console.log(person.telefono);
+
+      //vamos a desestructurar el objeto person
+      const { telefono , firstName } = person;
+      // console.log('desestructuracion de telefono:', telefono);
+      // console.log('desestructuracion de firstName:', firstName);
+      // console.log('desestructuracion de lastName:',lastName);
+
+      //Ejercicio de desesctructuracion, aplicala a este objeto
+      const car = {
+        brand : 'Ford',
+        model: 'F500',
+        color: 'Negro',
+        propietarios: {
+          propietario01: 'Carlos',
+          propietario02: 'Gladys',
+          propietario03: 'Nelson',
+          propietario04: 'Yeyny'
+        },
+        
+      }
+      // console.log(car.propietarios);
+      // console.log(car.propietarios.propietario04);
+
+      //aqui  empieza el desestructuring de car
+      // const { propietarios } =  car;
+      // console.log(propietarios);
+
+      //podemos volver a desestructurar el objeto propietarios
+      //como solo necesitamos hipoteticamente el valor del propietario04, entonces
+      //solo desestructuramos con la propiedad propietario04
+
+      // const { propietario04 } = propietarios ; 
+      // console.log(propietario04);
+
+      //la  desestructuracion tambien se puede hacer en objetos que se reciben como parametros
+      //funcion  con el parametro car Desestructurado
+      function mostrarValoresDelObjetoCar ( { brand , model, color, propietarios }  ) {
+        const { propietario04 } = propietarios;
+        console.log(brand);
+        console.log(model);
+        console.log(color);
+        console.log(propietarios);
+        console.log(propietario04);
+        
+      }
+      //funcion  con parametro car sin desestructurar
+      // function mostrarValoresDelObjetoCar ( car  ) {
+      //   console.log(car.brand);
+      //   console.log(car.model);
+      //   console.log(car.color);
+      //   console.log(car.propietarios);
+      // }
+
+      mostrarValoresDelObjetoCar( car ); //se llama la funcion y  se envia como parametro el objeto car
+
+    </script>
+
+    <!-- insertando un script externo -->
+    <!-- <script src="js/script.js"></script> -->
+  </body>
+</html>
