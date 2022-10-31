@@ -1,7 +1,18 @@
 body {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    background-color: rgb(43, 42, 42);
-    color: whitesmoke;
+    /* font-size: 25px;  */
+    background-color: rgb(241, 235, 235);
+    color: #121111
+}
+
+.saludo:hover {
+    color:aqua;
+    transition: 0.5s;
+}
+
+button {
+    font-size: 25px;
+    padding: 10px;
+    margin: 5px;
 }
