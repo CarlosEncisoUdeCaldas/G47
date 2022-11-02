@@ -8,6 +8,7 @@ const Saludo = ( props ) => {
   return (
     <>
         <p>Bienvenido Sr(a). { nombre } { apellido } </p>
+        <a href="/">Index</a>
     </>
   )
 }

@@ -64,7 +64,8 @@ const Contador = ({ value }) => {
         onClick={handleReset}
       >
         Reset
-      </button>
+      </button><br /><br />
+      <a href="/">Index</a>
     </>
   );
 };
