@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import IndexApp from "../../IndexApp";
-import Contador from "../Contador/Contador";
 
 const NavBar = () => {
   return (
