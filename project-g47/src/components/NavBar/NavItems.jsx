@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const NavItems = ({ navItems }) => {
+const NavItems = ( { navItems } ) => {
   return (
     navItems.map( ( { ruta, icon, title } ) => {
         return (
