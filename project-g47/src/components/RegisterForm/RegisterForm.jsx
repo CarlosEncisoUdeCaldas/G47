@@ -1,75 +1,48 @@
 import { useState } from "react";
+import InputRegister from "./InputRegister";
+
+//aqui se pueden crear subcomponentes
 
 const RegisterForm = () => {
-    //declaramos un useState para el input firstname
-    const [ firstname, setFirstName ] = useState('');
-    const [ lastname, setLastName ] = useState('');
-    const [ email, setEmail ] = useState('');
+    // declaramos un useState general para todos los inputs del formulario
+    const [inputsRegister, setInputsRegister] = useState({
+      firstname: "",
+      lastname: "",
+      email: "",
+      telefono: "", //ToDo: password
+    });
 
-    //declaramos una funcion handle para el input firstname
-    const handleFirstName = ( e ) => {
-        setFirstName( e.target.value )
-        console.log( firstname )
-    }
+    //desestructurar el inputsRegister
+    const {firstname, lastname, email, telefono} = inputsRegister
 
-    const handleLastName = ( e ) => {
-        setLastName( e.target.value )
-        console.log( lastname )
-    }
+    //funcion manejadora para todos los inputs generales
+    const handleInputs = (e) => {
+      setInputsRegister({ ...inputsRegister, [e.target.name]: e.target.value });
+      console.log(inputsRegister);
+    };
 
-    const handleEmail = ( e ) => {
-        setEmail( e.target.value )
-        console.log( email )
-    }
+    //funcion manejadora del boton submit
+    const handleFormSubmit = () => {
+      alert(JSON.stringify(inputsRegister));
+      //ToDo: Envio de toda la informacion al server
+    };
 
   return (
     <>
-    <div className="card input-card">
-      <div className="mb-3">
-        <label htmlFor="" className="form-label">
-          First Name:
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          id="firstname"
-          name="firstname"
-          placeholder="Type your Firstname"
-          value= { firstname }
-          onChange = { handleFirstName }
-        />
+      {/* inicio del elemento card */}
+      <div className="card input-card">
+        {/* inicio del formulario de registro */}
+        <form action="" onSubmit={handleFormSubmit}>
+            <InputRegister title='First Name:' type="text" name="firstname" value={ firstname } handle={handleInputs}/>
+            <InputRegister title='Last Name:' type="text" name="lastname" value={ lastname } handle={handleInputs} />
+            <InputRegister title='Email:' type="email" name="email" value={ email } handle={handleInputs} />
+            <InputRegister title='Telefono:' type="number" name="telefono" value={ telefono } handle={handleInputs} />
+          <button type="submit" className="btn btn-primary">
+            Enviar
+          </button>
+        </form>
+        {/* fin del formulario de registro */}
       </div>
-      <div className="mb-3">
-        <label htmlFor="" className="form-label">
-          Last Name:
-        </label>
-        <input
-          type="text"
-          className="form-control"
-          id="lastname"
-          name="lastname"
-          placeholder="Type your Lastname"
-          value= { lastname }
-          onChange = { handleLastName }
-        />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="" className="form-label">
-          Email:
-        </label>
-        <input
-          type="email"
-          className="form-control"
-          id="email"
-          name="email"
-          placeholder="example@email.com"
-          value= { email }
-          onChange = { handleEmail }
-        />
-      </div>
-      <button className='btn btn-primary' onClick={ () => console.log(firstname,lastname,email)}>Console.log</button>
-    </div>
-      
     </>
   );
 };
