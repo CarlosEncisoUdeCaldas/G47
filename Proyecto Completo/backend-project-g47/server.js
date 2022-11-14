@@ -38,8 +38,7 @@ router.post("/createUser", (req, res) => {
   User.findOne( { email: newUser.email }, (err, userFinded) => {
     if (err) {
       res.status(500).send({ message: "Error de la BD" });
-    }
-    if (userFinded) {
+    }else if (userFinded) {
       res.send({ message: "Usuario ya existe en la BD" });
     } else {
       newUser
@@ -74,9 +73,10 @@ router.get('/getAllUsers', async (req, res) => {
     User.find( { }, (err, result) => { 
         if(err){
             res.send({message:'Error del servidor: ' + err})
-        }
-        if(result){
+        }else if(result){
             res.status(200).send( { users: result } )
+        }else{
+            res.send(404).send( {message: 'No se encontro ningun documento'})
         }
     })
  
@@ -108,7 +108,9 @@ router.put('/updateUser/:id', async ( req, res) => {
 
     //verificamos que el correo que quieren cambiar no este dentro de la bd
     User.findOne( { email: userToUpdate.email }, (err, emailFinded) => {
-      if(emailFinded){
+      if(err){
+        res.status(500).send({message: 'Error del servidor'})
+      }else if(emailFinded){
         res.send({ message: 'Email invalidado, ya existe un usuario con este email'})
       }else{
         //sino encuentra una coincidencia entonces actualizamos los datos
@@ -119,7 +121,7 @@ router.put('/updateUser/:id', async ( req, res) => {
                   user: userUpdated
                 })
             }else{
-              res.status(404).send( { message: 'Usuario no encontrado', err: err.message} )
+              res.status(404).send( { message: 'Usuario no encontrado' } )
             }
         } );
       }
@@ -134,12 +136,13 @@ router.delete('/deleteUser/:id', (req, res) => {
   User.findOneAndRemove({ _id: idToDelete }, (err, userDeleted) => {
     if(userDeleted){
       res.send( { message: 'Usuario eliminado con exito', user: userDeleted})
+    }else if (!userDeleted) {
+      res.send( { message: 'Usuario no existe' } )
     }else{
-      res.send( { message: 'Usuario no existe', error: err} )
+      res.send( { message: `Error del servidor: ${err.message}` } )
     }
   })
 })
-
 
 
 //declaramos el uso de router con la const app
