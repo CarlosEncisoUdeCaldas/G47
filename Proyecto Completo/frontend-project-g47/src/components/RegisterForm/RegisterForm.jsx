@@ -9,11 +9,11 @@ const RegisterForm = () => {
       firstname: "",
       lastname: "",
       email: "",
-      telefono: "", //ToDo: password
+      password: "", //ToDo: password
     });
 
     //desestructurar el inputsRegister
-    const {firstname, lastname, email, telefono} = inputsRegister
+    const {firstname, lastname, email, password} = inputsRegister
 
     //funcion manejadora para todos los inputs generales
     const handleInputs = (e) => {
@@ -37,7 +37,7 @@ const RegisterForm = () => {
             <InputRegister title='First Name:' type="text" name="firstname" value={ firstname } handle={handleInputs}/>
             <InputRegister title='Last Name:' type="text" name="lastname" value={ lastname } handle={handleInputs} />
             <InputRegister title='Email:' type="email" name="email" value={ email } handle={handleInputs} />
-            <InputRegister title='Telefono:' type="number" name="telefono" value={ telefono } handle={handleInputs} />
+            <InputRegister title='Password:' type="password" name="password" value={ password } handle={handleInputs} />
           <button type="submit" className="btn btn-primary">
             Enviar
           </button>
